@@ -1,22 +1,23 @@
 package persons.staff;
 
+import persons.Gender;
 import persons.Person;
 
 public class Staff extends Person {
-    private String staffId;
-    private String position;
+    protected int staffId;
+    protected String position;
 
-    public Staff(String name, short age, String staffId, String position) {
-        super(name, age);
+    public Staff(String name, short age, Gender gender, int staffId, String position) {
+        super(name, age, gender);
         this.staffId = staffId;
         this.position = position;
     }
 
-    public String getStaffId() {
+    public int getStaffId() {
         return staffId;
     }
 
-    public void setStaffId(String staffId) {
+    public void setStaffId(int staffId) {
         this.staffId = staffId;
     }
 
@@ -26,5 +27,10 @@ public class Staff extends Person {
 
     public void setPosition(String position) {
         this.position = position;
+    }
+
+    @Override
+    public String toString() {
+        return "Staff member " + staffId + ": " + name;
     }
 }

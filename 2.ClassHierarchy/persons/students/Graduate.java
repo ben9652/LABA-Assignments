@@ -1,12 +1,12 @@
 package persons.students;
 
-import persons.Person;
+import persons.Gender;
 
-public class Graduate extends Person {
+public class Graduate extends Student {
     private String researchTopic;
 
-    public Graduate(String name, short age, String researchTopic) {
-        super(name, age);
+    public Graduate(String name, short age, Gender gender, int studentId, String major, String researchTopic) {
+        super(name, age, gender, studentId, major);
         this.researchTopic = researchTopic;
     }
 
@@ -16,5 +16,16 @@ public class Graduate extends Person {
 
     public void setResearchTopic(String researchTopic) {
         this.researchTopic = researchTopic;
+    }
+
+    @Override
+    public String toString() {
+        return
+            "Graduate " +
+            studentId + ": " +
+            name + "; " +
+            (super.gender == Gender.MALE ? "he's researching about " : "she's researching about ") +
+            researchTopic
+        ;
     }
 }

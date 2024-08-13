@@ -3,10 +3,12 @@ package persons;
 public abstract class Person {
     protected String name;
     protected short age;
+    protected Gender gender;
 
-    public Person(String name, short age) {
+    public Person(String name, short age, Gender gender) {
         this.name = name;
         this.age = age;
+        this.gender = gender;
     }
     
     public String getName() {

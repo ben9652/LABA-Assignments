@@ -1,12 +1,12 @@
 package persons.faculty;
 
-import persons.Person;
+import persons.Gender;
 
-public class AssistantProfessor extends Person {
+public class AssistantProfessor extends Faculty {
     private String supervisor;
 
-    public AssistantProfessor(String name, short age, String supervisor) {
-        super(name, age);
+    public AssistantProfessor(String name, short age, Gender gender, int facultyId, String supervisor) {
+        super(name, age, gender, facultyId);
         this.supervisor = supervisor;
     }
 
@@ -16,5 +16,15 @@ public class AssistantProfessor extends Person {
 
     public void setSupervisor(String supervisor) {
         this.supervisor = supervisor;
+    }
+
+    @Override
+    public String toString() {
+        return
+            "Assistant professor " + facultyId + ": " + name +
+            "; " +
+            (super.gender == Gender.MALE ? "his supervisor is " : "her supervisor is ") +
+            supervisor
+        ;
     }
 }
