@@ -26,4 +26,6 @@ public abstract class Person {
     public void setAge(short age) {
         this.age = age;
     }
+
+    public abstract void performDuties();
 }
