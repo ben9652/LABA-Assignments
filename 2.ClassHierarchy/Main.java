@@ -1,4 +1,6 @@
+import interfaces.Teachable;
 import persons.Gender;
+import persons.Person;
 import persons.faculty.AdjunctProfessor;
 import persons.faculty.AssistantProfessor;
 import persons.faculty.Faculty;
@@ -21,6 +23,9 @@ public class Main {
 
         // Crear un profesor con titularidad
         Faculty professor = new Professor("Dr. Smith", (short)45, Gender.MALE, 67890, true);
+
+        // Uso polimorfismo con la interfaz Teachable
+        Teachable teacher = new Professor("Dr. Brown", (short)50, Gender.MALE, 54321, false);
 
         // Crear un profesor asistente
         Faculty assistantProfessor = new AssistantProfessor("Dr. Brown", (short)38, Gender.MALE, 54321, "Dr. Newton");
@@ -53,7 +58,11 @@ public class Main {
         System.out.println(techStaff);
         System.out.println();
         System.out.println(maintenanceStaff);
+        System.out.println();
 
-        
+        teacher.teach();
+        System.out.println();
+
+        System.out.println("Total people after creation: " + Person.getTotalPeople());
     }
 }

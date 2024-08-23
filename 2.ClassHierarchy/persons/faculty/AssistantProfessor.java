@@ -2,7 +2,7 @@ package persons.faculty;
 
 import persons.Gender;
 
-public class AssistantProfessor extends Faculty {
+public final class AssistantProfessor extends Faculty {
     private String supervisor;
 
     public AssistantProfessor(String name, short age, Gender gender, int facultyId, String supervisor) {

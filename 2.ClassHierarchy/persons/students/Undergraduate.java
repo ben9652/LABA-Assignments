@@ -1,8 +1,9 @@
 package persons.students;
 
+import interfaces.Learnable;
 import persons.Gender;
 
-public class Undergraduate extends Student {
+public final class Undergraduate extends Student implements Learnable {
     private short year;
 
     public Undergraduate(String name, short age, Gender gender, int studentId, String major, short year) {
@@ -28,5 +29,10 @@ public class Undergraduate extends Student {
             year +
             " of college"
         ;
+    }
+
+    @Override
+    public void learn() {
+        System.out.println("Learning from courses and textbooks.");
     }
 }

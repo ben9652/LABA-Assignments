@@ -5,10 +5,23 @@ public abstract class Person {
     protected short age;
     protected Gender gender;
 
+    private final String institution = "Tech University";
+
+    private static int totalPeople = 0;
+
+    static {
+        System.out.println("Person class is loaded.");
+    }
+
     public Person(String name, short age, Gender gender) {
         this.name = name;
         this.age = age;
         this.gender = gender;
+        totalPeople++;
+    }
+
+    public static int getTotalPeople() {
+        return totalPeople;
     }
     
     public String getName() {
@@ -25,6 +38,10 @@ public abstract class Person {
 
     public void setAge(short age) {
         this.age = age;
+    }
+
+    public final String getInstitution() {
+        return institution;
     }
 
     public abstract void performDuties();
