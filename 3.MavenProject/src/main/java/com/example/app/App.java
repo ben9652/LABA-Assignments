@@ -3,23 +3,27 @@ package com.example.app;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import com.example.data.structures.LinkedList;
+import com.example.edu.university.Course;
+import com.example.edu.university.Department;
+import com.example.edu.university.University;
+import com.example.edu.university.personnel.Gender;
+import com.example.edu.university.personnel.Person;
+import com.example.edu.university.personnel.faculty.AdjunctProfessor;
+import com.example.edu.university.personnel.faculty.AssistantProfessor;
+import com.example.edu.university.personnel.faculty.Faculty;
+import com.example.edu.university.personnel.faculty.Professor;
+import com.example.edu.university.personnel.staff.AdministrativeStaff;
+import com.example.edu.university.personnel.staff.MaintenanceStaff;
+import com.example.edu.university.personnel.staff.Staff;
+import com.example.edu.university.personnel.staff.TechnicalStaff;
+import com.example.edu.university.personnel.students.Graduate;
+import com.example.edu.university.personnel.students.Student;
+import com.example.edu.university.personnel.students.Undergraduate;
 import com.example.exceptions.CourseNotFoundException;
 import com.example.exceptions.InvalidAgeException;
 import com.example.exceptions.InvalidPositionException;
 import com.example.interfaces.Teachable;
-import com.example.persons.Gender;
-import com.example.persons.Person;
-import com.example.persons.faculty.AdjunctProfessor;
-import com.example.persons.faculty.AssistantProfessor;
-import com.example.persons.faculty.Faculty;
-import com.example.persons.faculty.Professor;
-import com.example.persons.staff.AdministrativeStaff;
-import com.example.persons.staff.MaintenanceStaff;
-import com.example.persons.staff.Staff;
-import com.example.persons.staff.TechnicalStaff;
-import com.example.persons.students.Graduate;
-import com.example.persons.students.Student;
-import com.example.persons.students.Undergraduate;
 
 public class App {
     private static final Logger logger = LogManager.getLogger(App.class);
@@ -31,6 +35,7 @@ public class App {
         Teachable teacher = null;
         Faculty assistantProfessor = null;
         Faculty adjunctProfessor = null;
+        Faculty faculty = null;
         Staff adminStaff = null;
         Staff techStaff = null;
         Staff maintenanceStaff = null;
@@ -53,6 +58,8 @@ public class App {
     
             // Crear un profesor adjunto
             adjunctProfessor = new AdjunctProfessor("Dr. Green", (short)50, Gender.MALE, 98765, 12);
+
+            faculty = new Faculty("Dr. Smith", (short)38, Gender.MALE, 12039);
     
             // Crear un miembro del personal administrativo
             adminStaff = new AdministrativeStaff("John Doe", (short)30, Gender.MALE, 12345, "Registrar", "Room 101");
@@ -114,5 +121,35 @@ public class App {
         System.out.println();
     
         System.out.println("Total people after creation: " + Person.getTotalPeople());
+
+        /*** Uso de las colecciones creadas ***/
+        Course maths = new Course("Mathematics 101", assistantProfessor);
+        Course physics = new Course("Physics 101", adjunctProfessor);
+
+        undergrad.enrollInCourse(physics);
+        graduate.enrollInCourse(maths);
+
+        assistantProfessor.addCourse(maths);
+        adjunctProfessor.addCourse(physics);
+
+        Department department1 = new Department("Science Department");
+        department1.addFacultyMember(faculty);
+        
+        University university = new University("Tech University");
+        university.addDepartment(department1);
+        
+        /*** Pruebas de la estructura de datos "Lista enlazada" ***/
+        LinkedList<Integer> list = new LinkedList<Integer>();
+        list.Add(2);
+        list.Add(5);
+        list.Add(7);
+        list.Add(10);
+        list.Add(1);
+        list.Add(23);
+        list.PopElement(3);
+        list.PopFirst();
+        list.PopLast();
+
+        list.Print();
     }
 }
