@@ -4,7 +4,7 @@
     <property name="java.specification.version" value="22"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\ben96\LABA-Assignments\3.MavenProject\target\test-classes;C:\Users\ben96\LABA-Assignments\3.MavenProject\target\classes;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-api\3.0.0-beta2\log4j-api-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-core\3.0.0-beta2\log4j-core-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-plugins\3.0.0-beta2\log4j-plugins-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\ben96\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ben96\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\ben96\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ben96\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
+    <property name="java.class.path" value="C:\Users\ben96\LABA-Assignments\3.MavenProject\target\test-classes;C:\Users\ben96\LABA-Assignments\3.MavenProject\target\classes;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-api\3.0.0-beta2\log4j-api-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-core\3.0.0-beta2\log4j-core-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-plugins\3.0.0-beta2\log4j-plugins-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar;C:\Users\ben96\.m2\repository\org\apache\commons\commons-lang3\3.17.0\commons-lang3-3.17.0.jar;C:\Users\ben96\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\ben96\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ben96\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\ben96\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ben96\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
     <property name="user.variant" value=""/>
@@ -15,9 +15,9 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="ES"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-22\bin"/>
-    <property name="sun.java.command" value="C:\Users\ben96\AppData\Local\Temp\surefire1286406768220545955\surefirebooter-20240910091835350_3.jar C:\Users\ben96\AppData\Local\Temp\surefire1286406768220545955 2024-09-10T09-18-35_034-jvmRun1 surefire-20240910091835350_1tmp surefire_0-20240910091835350_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\ben96\AppData\Local\Temp\surefire16491811985790222828\surefirebooter-20240912213511788_3.jar C:\Users\ben96\AppData\Local\Temp\surefire16491811985790222828 2024-09-12T21-35-11_429-jvmRun1 surefire-20240912213511788_1tmp surefire_0-20240912213511788_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\ben96\LABA-Assignments\3.MavenProject\target\test-classes;C:\Users\ben96\LABA-Assignments\3.MavenProject\target\classes;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-api\3.0.0-beta2\log4j-api-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-core\3.0.0-beta2\log4j-core-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-plugins\3.0.0-beta2\log4j-plugins-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\ben96\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ben96\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\ben96\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ben96\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\ben96\LABA-Assignments\3.MavenProject\target\test-classes;C:\Users\ben96\LABA-Assignments\3.MavenProject\target\classes;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-api\3.0.0-beta2\log4j-api-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-core\3.0.0-beta2\log4j-core-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\org\apache\logging\log4j\log4j-plugins\3.0.0-beta2\log4j-plugins-3.0.0-beta2.jar;C:\Users\ben96\.m2\repository\commons-io\commons-io\2.16.1\commons-io-2.16.1.jar;C:\Users\ben96\.m2\repository\org\apache\commons\commons-lang3\3.17.0\commons-lang3-3.17.0.jar;C:\Users\ben96\.m2\repository\org\junit\jupiter\junit-jupiter-api\5.11.0\junit-jupiter-api-5.11.0.jar;C:\Users\ben96\.m2\repository\org\opentest4j\opentest4j\1.3.0\opentest4j-1.3.0.jar;C:\Users\ben96\.m2\repository\org\junit\platform\junit-platform-commons\1.11.0\junit-platform-commons-1.11.0.jar;C:\Users\ben96\.m2\repository\org\apiguardian\apiguardian-api\1.1.2\apiguardian-api-1.1.2.jar;C:\Users\ben96\.m2\repository\org\junit\jupiter\junit-jupiter-params\5.11.0\junit-jupiter-params-5.11.0.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\ben96"/>
     <property name="user.language" value="es"/>
@@ -30,7 +30,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ben96\AppData\Local\Temp\surefire1286406768220545955\surefirebooter-20240910091835350_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ben96\AppData\Local\Temp\surefire16491811985790222828\surefirebooter-20240912213511788_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="22.0.1+8-16"/>
@@ -58,5 +58,5 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="66.0"/>
   </properties>
-  <testcase name="shouldAnswerWithTrue" classname="com.example.app.AppTest" time="0.048"/>
+  <testcase name="shouldAnswerWithTrue" classname="com.example.app.AppTest" time="0.047"/>
 </testsuite>
