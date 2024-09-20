@@ -11,12 +11,16 @@ public class Student extends Person {
     protected int studentId;
     protected String major;
     protected List<Course> coursesEnrolled;
+    protected List<Integer> grades;
+
+    protected float averageGrade;
     
     public Student(String name, short age, Gender gender, int studentId, String major) throws InvalidAgeException {
         super(name, age, gender);
         this.studentId = studentId;
         this.major = major;
         coursesEnrolled = new ArrayList<Course>();
+        averageGrade = 0;
     }
 
     public void enrollInCourse(Course course) {
@@ -33,6 +37,22 @@ public class Student extends Person {
 
     public String getMajor() {
         return major;
+    }
+
+    public float getGrade() {
+        return averageGrade;
+    }
+
+    public void setGrade(float averageGrade) {
+        this.averageGrade = averageGrade;
+    }
+
+    public void setGrades(List<Integer> grades) {
+        this.grades = grades;
+    }
+
+    public List<Integer> getGrades() {
+        return grades;
     }
 
     @Override

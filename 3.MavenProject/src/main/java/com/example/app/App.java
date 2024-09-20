@@ -1,5 +1,14 @@
 package com.example.app;
 
+import java.util.Comparator;
+import java.util.List;
+import java.util.function.BiFunction;
+import java.util.function.Consumer;
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
+
+import org.apache.commons.lang3.StringUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -39,6 +48,10 @@ public class App {
         Staff adminStaff = null;
         Staff techStaff = null;
         Staff maintenanceStaff = null;
+        Professor professor2;
+
+        // Predicate genérico: verifica si un objeto no es null
+        Predicate<Object> isNotNull = obj -> obj != null;
         
         try {
             // Crear un estudiante de grado
@@ -49,7 +62,8 @@ public class App {
     
             // Crear un profesor con titularidad
             professor = new Professor("Dr. Smith", (short)45, Gender.MALE, 67890, true);
-    
+            professor2 = new Professor("Dr. Tyler", (short)36, Gender.MALE, 56134, true);
+
             // Uso polimorfismo con la interfaz Teachable
             teacher = new Professor("Dr. Brown", (short)50, Gender.MALE, 54321, false);
     
@@ -71,6 +85,49 @@ public class App {
             maintenanceStaff = new MaintenanceStaff("Mark Smith", (short)40, Gender.MALE, 54321, "Janitor", "Night");
 
             ((Undergraduate)undergrad).enrollInCourse("Biology");
+
+            // Verificar si el estudiante ha aprobado
+            Predicate<Student> isApproved = student -> student.getGrade() >= 6;
+    
+            // Función para transformar el tipo de dato Student a uno String
+            Function<Student, String> getName = student -> student.getName();
+    
+            // Imprimir la información de un miembro de la facultad
+            Consumer<Faculty> printFacultyInfo = facultyVar -> System.out.println("Faculty ID: " + facultyVar.getFacultyId() + ", Faculty name: " + facultyVar.getName());
+
+            // Proveer un curso
+            Supplier<Course> courseSupplier = () -> new Course("Data Structures", professor2);
+
+            // Comparar dos profesores
+            Comparator<Faculty> compareByName = (fac1, fac2) -> StringUtils.compare(fac1.getName(), fac2.getName());
+
+
+            // Uso de Predicate
+            System.out.println("Is student approved so far: " + isApproved.test(graduate));
+
+            // Uso de Function
+            System.out.println("Student name: " + getName.apply(graduate));
+
+            // Uso de Consumer
+            printFacultyInfo.accept(faculty);
+
+            // Uso de Supplier
+            Course course = courseSupplier.get();
+            System.out.println("Course: " + course.getCourseName() + ", Instructor: " + course.getInstructor());
+
+            // Uso de Comparator
+            int comparisonResult = compareByName.compare(faculty, professor);
+            if(comparisonResult == 0) {
+                System.out.println("There are two faculty with the same last name");
+            }
+
+            // Function genérica: convierte cualquier objeto a su representación String
+            Function<Object, String> objectToString = obj -> obj.toString();
+            String teacherString = objectToString.apply(teacher);
+
+            // BiFunction genérico: suma dos números de cualquier tipo
+            BiFunction<Number, Number, Double> sumNumbers = (num1, num2) -> num1.doubleValue();
+            Double sumResult = sumNumbers.apply(23, 52);
         }
         catch(InvalidAgeException ex) {
             logger.error(ex.getMessage());
@@ -84,39 +141,39 @@ public class App {
         
         System.out.println();
 
-        if(undergrad != null)
+        if(isNotNull.test(undergrad))
             logger.info(undergrad);
         System.out.println();
 
-        if(graduate != null)
+        if(isNotNull.test(graduate))
             logger.info(graduate);
         System.out.println();
 
-        if(professor != null)
+        if(isNotNull.test(professor))
             logger.info(professor);
         System.out.println();
 
-        if(assistantProfessor != null)
+        if(isNotNull.test(assistantProfessor))
             logger.info(assistantProfessor);
         System.out.println();
 
-        if(adjunctProfessor != null)
+        if(isNotNull.test(adjunctProfessor))
             logger.info(adjunctProfessor);
         System.out.println();
 
-        if(adminStaff != null)
+        if(isNotNull.test(adminStaff))
             logger.info(adminStaff);
         System.out.println();
 
-        if(techStaff != null)
+        if(isNotNull.test(techStaff))
             logger.info(techStaff);
         System.out.println();
 
-        if(maintenanceStaff != null)
+        if(isNotNull.test(maintenanceStaff))
             logger.info(maintenanceStaff);
         System.out.println();
 
-        if(teacher != null)
+        if(isNotNull.test(teacher))
             teacher.teach();
         System.out.println();
     
