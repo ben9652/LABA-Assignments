@@ -13,7 +13,7 @@ public class Student extends Person {
     protected List<Course> coursesEnrolled;
     protected List<Integer> grades;
 
-    protected float averageGrade;
+    protected double averageGrade;
     
     public Student(String name, short age, Gender gender, int studentId, String major) throws InvalidAgeException {
         super(name, age, gender);
@@ -39,11 +39,11 @@ public class Student extends Person {
         return major;
     }
 
-    public float getGrade() {
+    public double getGrade() {
         return averageGrade;
     }
 
-    public void setGrade(float averageGrade) {
+    public void setGrade(double averageGrade) {
         this.averageGrade = averageGrade;
     }
 
@@ -53,6 +53,14 @@ public class Student extends Person {
 
     public List<Integer> getGrades() {
         return grades;
+    }
+
+    public void calcAvgGrade() {
+        averageGrade = grades.stream()
+                    .mapToInt(grade -> grade)
+                    .average()
+                    .orElse(0.0)
+                    ;
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.edu.university.personnel.faculty;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.example.edu.university.Course;
 import com.example.edu.university.personnel.Gender;
@@ -22,16 +23,18 @@ public class Faculty extends Person {
         coursesTaught.add(course);
     }
 
-    public List<Course> getCoursesTaught() {
-        return coursesTaught;
-    }
-
     public int getFacultyId() {
         return facultyId;
     }
 
     public void setFacultyId(int facultyId) {
         this.facultyId = facultyId;
+    }
+
+    public long getNumberOfCoursesTaught() {
+        return coursesTaught.stream()
+                .count()
+                ;
     }
 
     @Override
@@ -42,6 +45,13 @@ public class Faculty extends Person {
     @Override
     public void performDuties() {
         System.out.println("Teach classes, develop curriculum, and participate in academic research.");
+    }
+
+    public List<String> getCoursesNamesTaught() {
+        return coursesTaught.stream()
+                .map(Course::getCourseName)
+                .collect(Collectors.toList())
+                ;
     }
 
     @Override

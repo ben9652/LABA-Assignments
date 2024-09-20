@@ -1,7 +1,10 @@
 package com.example.app;
 
+import java.lang.reflect.Constructor;
+import java.lang.reflect.Field;
+import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.Comparator;
-import java.util.List;
 import java.util.function.BiFunction;
 import java.util.function.Consumer;
 import java.util.function.Function;
@@ -61,11 +64,11 @@ public class App {
             graduate = new Graduate("Bob", (short)25, Gender.MALE, 54321, "Data Science", "AI in Healthcare");
     
             // Crear un profesor con titularidad
-            professor = new Professor("Dr. Smith", (short)45, Gender.MALE, 67890, true);
-            professor2 = new Professor("Dr. Tyler", (short)36, Gender.MALE, 56134, true);
+            professor = new Professor("Dr. Smith", (short)45, Gender.MALE, 67890, true, 15);
+            professor2 = new Professor("Dr. Tyler", (short)36, Gender.MALE, 56134, true, 4);
 
             // Uso polimorfismo con la interfaz Teachable
-            teacher = new Professor("Dr. Brown", (short)50, Gender.MALE, 54321, false);
+            teacher = new Professor("Dr. Brown", (short)50, Gender.MALE, 54321, false, 12);
     
             // Crear un profesor asistente
             assistantProfessor = new AssistantProfessor("Dr. Brown", (short)38, Gender.MALE, 54321, "Dr. Newton");
@@ -208,5 +211,59 @@ public class App {
         list.PopLast();
 
         list.Print();
+
+        System.out.println();
+
+        /**** USO DE RELFECTIONS ****/
+        Class<?> studentClass = Student.class;
+
+        // Extraigo información sobre los campos
+        System.out.println("Fields:");
+        for(Field field : studentClass.getDeclaredFields()) {
+            System.out.println("Field name: " + field.getName());
+            System.out.println("Type: " + field.getType().getSimpleName());
+            System.out.println("Modifiers: " + Modifier.toString(field.getModifiers()));
+            System.out.println();
+        }
+
+        // Extraer información sobre los constructores
+        System.out.println("\nConstructors:");
+        for (Constructor<?> constructor : studentClass.getConstructors()) {
+            System.out.println("Constructor: " + constructor);
+            System.out.println("Parameter Types:");
+            for (Class<?> paramType : constructor.getParameterTypes()) {
+                System.out.println(" - " + paramType.getSimpleName());
+            }
+        }
+
+        // Extraer información sobre los métodos
+        System.out.println("\nMethods:");
+        for (Method method : studentClass.getMethods()) {
+            System.out.println("Method Name: " + method.getName());
+            System.out.println("Return Type: " + method.getReturnType().getSimpleName());
+            System.out.println("Modifiers: " + Modifier.toString(method.getModifiers()));
+            System.out.println("Parameter Types:");
+            for (Class<?> paramType : method.getParameterTypes()) {
+                System.out.println(" - " + paramType.getSimpleName());
+            }
+        }
+
+        try {
+            // Crear un objeto Undergraduate usando reflection
+            Constructor<?> constructor = studentClass.getConstructor(String.class, short.class, Gender.class, int.class, String.class);
+            Object student = constructor.newInstance("Alice", (short)21, Gender.FEMALE, 101, "Biology");
+    
+            // Llamar a un método usando reflection
+            Method setGpaMethod = studentClass.getMethod("setGrade", double.class);
+            setGpaMethod.invoke(student, 4.0);  // Cambiar el promedio
+    
+            // Llamar a toString para verificar los cambios
+            Method toStringMethod = studentClass.getMethod("toString");
+            System.out.println("\nUpdated Student: " + toStringMethod.invoke(student));
+
+        }
+        catch(Exception ex) {
+            logger.error(ex.getMessage());
+        }
     }
 }

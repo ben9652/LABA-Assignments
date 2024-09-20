@@ -8,10 +8,12 @@ import com.example.interfaces.Teachable;
 
 public final class Professor extends Faculty implements Teachable, Researchable, Manageable {
     private boolean tenure;
+    private int yearsOfExperience;
 
-    public Professor(String name, short age, Gender gender, int facultyId, boolean tenure) throws InvalidAgeException {
+    public Professor(String name, short age, Gender gender, int facultyId, boolean tenure, int yearsOfExperience) throws InvalidAgeException {
         super(name, age, gender, facultyId);
         this.tenure = tenure;
+        this.yearsOfExperience = yearsOfExperience;
     }
 
     public boolean isTenure() {
@@ -30,6 +32,10 @@ public final class Professor extends Faculty implements Teachable, Researchable,
             (super.gender == Gender.MALE ? "he" : "she") + " " +
             (tenure ? "has" : "has no") + " tenure"
         ;
+    }
+
+    public int getYearsOfExperience() {
+        return yearsOfExperience;
     }
 
     @Override
