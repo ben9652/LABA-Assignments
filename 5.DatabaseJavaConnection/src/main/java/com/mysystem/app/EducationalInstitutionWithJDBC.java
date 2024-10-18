@@ -7,7 +7,7 @@ import com.mysystem.app.dao.ProfessorDAO;
 import com.mysystem.app.models.Professor;
 import com.mysystem.app.services.ProfessorService;
 
-public class App {
+public class EducationalInstitutionWithJDBC {
     public static void main(String[] args) {
         ProfessorDAO dao = new ProfessorDAO();
         ProfessorService pService = new ProfessorService(dao);

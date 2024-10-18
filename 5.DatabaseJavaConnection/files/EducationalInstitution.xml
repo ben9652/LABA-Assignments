@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EducationalInstitution>
+
+    <Departments>
+        <Department>
+            <id_department>1</id_department>
+            <department_name>Computer Science</department_name>
+            <id_head_professor>1</id_head_professor>
+        </Department>
+        <Department>
+            <id_department>2</id_department>
+            <department_name>Mathematics</department_name>
+            <id_head_professor>2</id_head_professor>
+        </Department>
+    </Departments>
+
+    <Professors>
+        <Professor>
+            <id_professor>1</id_professor>
+            <first_name>John</first_name>
+            <last_name>Doe</last_name>
+            <hire_date>2010-08-15</hire_date>
+            <salary>75000.00</salary>
+            <id_department>1</id_department>
+        </Professor>
+        <Professor>
+            <id_professor>2</id_professor>
+            <first_name>Jane</first_name>
+            <last_name>Smith</last_name>
+            <hire_date>2015-09-10</hire_date>
+            <salary>65000.00</salary>
+            <id_department>2</id_department>
+        </Professor>
+    </Professors>
+
+    <Courses>
+        <Course>
+            <id_course>1</id_course>
+            <course_name>Data Structures</course_name>
+            <credits>4</credits>
+            <id_professor>1</id_professor>
+            <id_department>1</id_department>
+        </Course>
+        <Course>
+            <id_course>2</id_course>
+            <course_name>Calculus</course_name>
+            <credits>3</credits>
+            <id_professor>2</id_professor>
+            <id_department>2</id_department>
+        </Course>
+    </Courses>
+
+    <Students>
+        <Student>
+            <id_student>1</id_student>
+            <first_name>Jane</first_name>
+            <last_name>Smith</last_name>
+            <enrollment_date>2020-09-01</enrollment_date>
+            <gpa>3.75</gpa>
+            <id_department>1</id_department>
+        </Student>
+        <Student>
+            <id_student>2</id_student>
+            <first_name>Mark</first_name>
+            <last_name>Johnson</last_name>
+            <enrollment_date>2021-01-10</enrollment_date>
+            <gpa>3.80</gpa>
+            <id_department>2</id_department>
+        </Student>
+    </Students>
+
+    <Enrollments>
+        <Enrollment>
+            <id_enrollment>1</id_enrollment>
+            <id_student>1</id_student>
+            <id_course>1</id_course>
+            <enrollment_date>2020-09-05</enrollment_date>
+            <grade>85.00</grade>
+        </Enrollment>
+        <Enrollment>
+            <id_enrollment>2</id_enrollment>
+            <id_student>2</id_student>
+            <id_course>2</id_course>
+            <enrollment_date>2021-01-15</enrollment_date>
+            <grade>90.00</grade>
+        </Enrollment>
+    </Enrollments>
+
+</EducationalInstitution>

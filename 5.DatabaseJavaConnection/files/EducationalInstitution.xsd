@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
+
+    <!-- Tipo para los Departamentos -->
+    <xs:complexType name="DepartmentType">
+        <xs:sequence>
+            <xs:element name="id_department" type="xs:int"/>
+            <xs:element name="department_name" type="xs:string"/>
+            <xs:element name="id_head_professor" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Tipo para los Profesores -->
+    <xs:complexType name="ProfessorType">
+        <xs:sequence>
+            <xs:element name="id_professor" type="xs:int"/>
+            <xs:element name="first_name" type="xs:string"/>
+            <xs:element name="last_name" type="xs:string"/>
+            <xs:element name="hire_date" type="xs:date"/>
+            <xs:element name="salary" type="xs:decimal"/>
+            <xs:element name="id_department" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Tipo para los Cursos -->
+    <xs:complexType name="CourseType">
+        <xs:sequence>
+            <xs:element name="id_course" type="xs:int"/>
+            <xs:element name="course_name" type="xs:string"/>
+            <xs:element name="credits" type="xs:int"/>
+            <xs:element name="id_professor" type="xs:int"/>
+            <xs:element name="id_department" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Tipo para los Estudiantes -->
+    <xs:complexType name="StudentType">
+        <xs:sequence>
+            <xs:element name="id_student" type="xs:int"/>
+            <xs:element name="first_name" type="xs:string"/>
+            <xs:element name="last_name" type="xs:string"/>
+            <xs:element name="enrollment_date" type="xs:date"/>
+            <xs:element name="gpa" type="xs:decimal"/>
+            <xs:element name="id_department" type="xs:int"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Tipo para las Inscripciones -->
+    <xs:complexType name="EnrollmentType">
+        <xs:sequence>
+            <xs:element name="id_enrollment" type="xs:int"/>
+            <xs:element name="id_student" type="xs:int"/>
+            <xs:element name="id_course" type="xs:int"/>
+            <xs:element name="enrollment_date" type="xs:date"/>
+            <xs:element name="grade" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Elementos principales -->
+    <xs:complexType name="DepartmentsType">
+        <xs:sequence>
+            <xs:element name="Department" type="DepartmentType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="ProfessorsType">
+        <xs:sequence>
+            <xs:element name="Professor" type="ProfessorType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="CoursesType">
+        <xs:sequence>
+            <xs:element name="Course" type="CourseType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="StudentsType">
+        <xs:sequence>
+            <xs:element name="Student" type="StudentType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="EnrollmentsType">
+        <xs:sequence>
+            <xs:element name="Enrollment" type="EnrollmentType" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:element name="Departments" type="DepartmentsType"/>
+    <xs:element name="Professors" type="ProfessorsType"/>
+    <xs:element name="Courses" type="CoursesType"/>
+    <xs:element name="Students" type="StudentsType"/>
+    <xs:element name="Enrollments" type="EnrollmentsType"/>
+    
+    <xs:complexType name="EducationalInstitutionType">
+        <xs:sequence>
+            <xs:element name="Departments" type="DepartmentsType"/>
+            <xs:element name="Professors" type="ProfessorsType"/>
+            <xs:element name="Courses" type="CoursesType"/>
+            <xs:element name="Students" type="StudentsType"/>
+            <xs:element name="Enrollments" type="EnrollmentsType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:element name="EducationalInstitution" type="EducationalInstitutionType"/>
+
+</xs:schema>
