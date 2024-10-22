@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<department>
+    <id>101</id>
+    <head_professor_id>1</head_professor_id>
+    <department_name>Computer Science</department_name>
+    <professors>
+        <professor>
+            <id>1</id>
+            <first_name>John</first_name>
+            <last_name>Doe</last_name>
+            <hire_date/>
+            <salary>60000.0</salary>
+        </professor>
+        <professor>
+            <id>2</id>
+            <first_name>Jane</first_name>
+            <last_name>Smith</last_name>
+            <hire_date/>
+            <salary>65000.0</salary>
+        </professor>
+    </professors>
+    <students>
+        <student>
+            <id>1</id>
+            <department_id>101</department_id>
+            <first_name>Alice</first_name>
+            <last_name>Johnson</last_name>
+            <enrollment_date/>
+            <gpa>3.8</gpa>
+        </student>
+        <student>
+            <id>2</id>
+            <department_id>101</department_id>
+            <first_name>Bob</first_name>
+            <last_name>Williams</last_name>
+            <enrollment_date/>
+            <gpa>3.5</gpa>
+        </student>
+    </students>
+</department>

@@ -3,9 +3,9 @@ package com.mysystem.app.models;
 import java.sql.Date;
 import java.time.format.DateTimeFormatter;
 
-import javax.xml.bind.annotation.XmlElement;
-import javax.xml.bind.annotation.XmlRootElement;
-import javax.xml.bind.annotation.XmlType;
+import jakarta.xml.bind.annotation.XmlElement;
+import jakarta.xml.bind.annotation.XmlRootElement;
+import jakarta.xml.bind.annotation.XmlType;
 
 @XmlRootElement(name = "professor")
 @XmlType(propOrder = { "id", "idDepartment", "firstName", "lastName", "hireDate", "salary" })
