@@ -1,3 +1,4 @@
 .vscode
 3.MavenProject/logs
 5.DatabaseJavaConnection/logs
+6.JSONDatabase/logs
