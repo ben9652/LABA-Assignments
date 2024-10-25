@@ -1,5 +1,6 @@
 package com.mysystem.app.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -30,6 +31,9 @@ public class Student {
     private Float gpa;
 
     private List<Course> courses;
+
+    @JsonBackReference
+    private Department department;
 
     public Student() {}
 

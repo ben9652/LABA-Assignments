@@ -1,5 +1,6 @@
 package com.mysystem.app.models;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -28,6 +29,9 @@ public class Professor {
 
     @JsonProperty("salary")
     private float salary;
+
+    @JsonBackReference
+    private Department department;
 
     public Professor() {}
 
