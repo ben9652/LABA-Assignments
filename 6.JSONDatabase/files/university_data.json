@@ -1,0 +1,85 @@
+{
+  "students" : [ {
+    "student_id" : 1,
+    "department_id" : 1,
+    "first_name" : "Lucas",
+    "last_name" : "Gomez",
+    "enrollment_date" : "1970-01-01"
+  }, {
+    "student_id" : 2,
+    "department_id" : 1,
+    "first_name" : "Maria",
+    "last_name" : "Lopez",
+    "enrollment_date" : "1970-01-01"
+  } ],
+  "professors" : [ {
+    "professor_id" : 10,
+    "first_name" : "John",
+    "last_name" : "Doe",
+    "hire_date" : "1970-01-01",
+    "salary" : 5000.5
+  }, {
+    "professor_id" : 11,
+    "first_name" : "Emily",
+    "last_name" : "Smith",
+    "hire_date" : "1970-01-01",
+    "salary" : 4800.0
+  } ],
+  "departments" : [ {
+    "department_id" : 1,
+    "head_professor_id" : 10,
+    "department_name" : "Computer Science",
+    "professors" : [ {
+      "professor_id" : 10,
+      "first_name" : "John",
+      "last_name" : "Doe",
+      "hire_date" : "1970-01-01",
+      "salary" : 5000.5
+    }, {
+      "professor_id" : 11,
+      "first_name" : "Emily",
+      "last_name" : "Smith",
+      "hire_date" : "1970-01-01",
+      "salary" : 4800.0
+    } ],
+    "students" : [ {
+      "student_id" : 1,
+      "department_id" : 1,
+      "first_name" : "Lucas",
+      "last_name" : "Gomez",
+      "enrollment_date" : "1970-01-01"
+    }, {
+      "student_id" : 2,
+      "department_id" : 1,
+      "first_name" : "Maria",
+      "last_name" : "Lopez",
+      "enrollment_date" : "1970-01-01"
+    } ]
+  } ],
+  "courses" : [ {
+    "course_id" : 101,
+    "department_id" : 1,
+    "professor_id" : 10,
+    "course_name" : "Mathematics",
+    "credits" : 5
+  }, {
+    "course_id" : 102,
+    "department_id" : 1,
+    "professor_id" : 11,
+    "course_name" : "Physics",
+    "credits" : 4
+  } ],
+  "exams" : [ {
+    "exam_id" : 1001,
+    "course_id" : 101,
+    "exam_date" : "01/01/1970",
+    "exam_type" : "Final",
+    "total_marks" : 100
+  }, {
+    "exam_id" : 1002,
+    "course_id" : 102,
+    "exam_date" : "01/01/1970",
+    "exam_type" : "Midterm",
+    "total_marks" : 50
+  } ]
+}
